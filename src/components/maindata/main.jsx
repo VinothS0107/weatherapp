@@ -79,7 +79,7 @@ export function MainContent(){
                                 </li>
                         )})}
                     </ul> 
-                <div className="flex justify-center w-[50%] m-[20px] gap-2" >
+                <div className="flex justify-center w-[60%] m-[20px] gap-2" >
                     <button type="button" className="text-[20px] border-2 w-[40px] " name="decrement" onClick={getInput}>-</button>
                     <ul className="flex justify-center gap-4" onClick={onPageClick}> 
                         {pageNumber.map((eachPage,index)=>(
