@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Context } from "../../context/useContext"
-import { getSeconds } from  "date-fns";
+import icon from "../../assets/sunny.jpg"
 export function MainContent(){
     const apiData=useContext(Context)[2]
      const temperature=apiData.hourly.temperature_2m
@@ -9,21 +9,22 @@ export function MainContent(){
 
    let combine=[]
    for(let i=0;i<temperature.length;i++){
-        const totalSeconds=getSeconds(new Date(time[i]))        
-        console.log(totalSeconds)
-        
-            // const totalMinutes = Math.floor(totalSeconds / 60);
-            // const seconds = totalSeconds % 60;
-            // const hours = Math.floor(totalMinutes / 60);
-            // const minutes = totalMinutes % 60;
-          
-            //  console.log({ h: hours, m: minutes, s: seconds })
-
+        combine.push([temperature[i], new Date(time[i]).getHours()])
  }
-
+console.log(combine)
     return(
-        <div className="">
-            vinoth
+        <div className="grid grid-cols-4 gap-2 w-[70%] mt-[30px] justify-items-center content-center">
+            {combine.map((eachItem)=>(
+                <>
+                    <div className="border rounded-md w-[80px] h-[80px] flex flex-col items-center" >
+                        <p>{eachItem[1]}</p>
+                        <img src={icon} className="w-[30px] h-[30px]" />
+                        <p>{eachItem[0]}<sup>o</sup>C</p>
+                        
+                    </div>
+            </>
+                )
+            )}
 
         </div>
     )
