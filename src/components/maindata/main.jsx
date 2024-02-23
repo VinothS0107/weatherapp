@@ -22,9 +22,6 @@ export function MainContent(){
  }
 
     return(
-        <div className="">
-            vinoth
-
-        </div>
+        <div className="">Ready to Display Api</div>
     )
 }
