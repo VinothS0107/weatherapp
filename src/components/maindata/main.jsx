@@ -56,7 +56,7 @@ export function MainContent(){
     return(
         <>
               <h1 className="text-[18px] mt-5 font-semibold">City: {cityDetails.city}</h1>
-                   <ul className="grid grid-cols-4 gap-2  h-[250px] sm:w-[80%] mt-[30px] justify-items-center content-center list-none">    
+                   <ul className="grid grid-cols-4 gap-2  h-[250px] mt-[30px] justify-items-center content-center list-none">    
                         {combine.map((eachItem,inx)=>{
                             function dateConversion(hours){
                                 const indianTime=hours<12?hours:hours-12;
