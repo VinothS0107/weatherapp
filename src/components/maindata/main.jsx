@@ -13,7 +13,7 @@ export function MainContent(){
  }
 console.log(combine)
     return(
-        <div className="grid grid-cols-4 gap-2 w-[70%] mt-[30px] justify-items-center content-center">
+        <div className="grid grid-cols-4 gap-2 sm:w-[80%] mt-[30px] justify-items-center content-center">
             {combine.map((eachItem)=>(
                 <>
                     <div className="border rounded-md w-[80px] h-[80px] flex flex-col items-center" >
