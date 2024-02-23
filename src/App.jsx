@@ -17,7 +17,6 @@ function App() {
  const [responseData,setResponseData]=useState([])
  const [isGotData,setIsgotData] = useState (false)
 
-// useEffect(()=>{},[responseData])
 
  const handlePostData= async ()=>{
   setLoader(true)
@@ -54,17 +53,15 @@ setError("Please Choose Latitude and Longitude Image and Hourly")
   return (
     <>
     <Context.Provider value={[selectedCity,setSelectedCity,responseData]}>
-    <div className='max-w-[680px] min-h-[100vh] m-auto border border-red-500 flex flex-col items-center bg-gradient-to-bl from-[#DDC1D1,#86A8E7] to-[#5FFBF1]'>
+    <div className='max-w-[680px] min-h-[100vh] text-wrap m-auto border border-red-500 flex flex-col items-center bg-gradient-to-bl from-[#DDC1D1,#86A8E7] to-[#5FFBF1]'>
     <CarouselSize />
     <Timecard />
     <ComboboxDemo />
     <button type="button" className="border bg-[#000000] mt-4 mb-1 px-3 text-[#ffffff] rounded" onClick={handlePostData}>Submit</button>
     {handleError!==null?<p className='text-red-700 text-center'>{handleError}</p>:null}
-    {loader?<ClipLoader />:isGotData ?<MainContent response={responseData.hourly} /> :'' }
-    
+    {loader?<ClipLoader />:isGotData ?<MainContent />:'' }
     </div>
-    
-    {/* {isGotData ? ( <Pagination/>):'' } */}
+  
    
     </Context.Provider>
     </>

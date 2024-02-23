@@ -35,15 +35,16 @@ setSelectedCity((prev)=>{return {...prev,day}})
 }
 const showStartEndDate=()=>{
   return(
-    <div className="max-w-[100%] text-center m-5 border-2 flex flex-col">
+    <div className="max-w-[100%] text-center m-5 flex flex-row">
       <DatePickerWithRange />
+      {showPastDate()}
     </div>
   )
 }
 
 const showPastDate=()=>{
   return(
-    <div className="max-w-[100%] text-center m-5 border-2 flex flex-col rounded ">
+    <div className="max-w-[100%] text-center m-5 border-2 flex flex-col rounded-md ">
         <select onChange={onSelectedDays} name="selectDate" className="outline-none" >
           <option defaultValue value="">Choose Date</option>
           {frameworks.map((each)=>(

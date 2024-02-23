@@ -56,9 +56,9 @@ export function CarouselSize() {
 
     const showLatandLong=()=>{
         return(
-            <div className="block mt-[20px] mb-[20px] flex justify-between gap-2 sm:w-[60%] md:w-[70%] font-semibold text-[18px]">
-                <p className="w-[50%] border rounded-md  p-2">Latitude:{selectedCity.latitude}</p>
-                <p className="w-[50%] border rounded-md p-2">Longitude:{selectedCity.longitude}</p>
+            <div className="block mt-[20px] mb-[20px] flex justify-between gap-2 w-[70%] font-semibold  text-[15px]">
+                <p className="w-[50%] border truncate rounded-md p-2 ">Latitude:{selectedCity.latitude}</p>
+                <p className="w-[50%] border truncate rounded-md p-2 ">Longitude:{selectedCity.longitude}</p>
             </div>
         )
     }

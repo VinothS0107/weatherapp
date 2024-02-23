@@ -24,7 +24,7 @@ import {
 
   return(
           <>
-            <Card className="w-[70%] min-h-[100px] m-4 border-2" >
+            <Card className="w-[70%] min-h-[100px] m-4 border-2 truncate" >
               <CardContent  className="grid grid-cols-2 gap-5 p-3  content-between text-[20px] ">
                 <div className="flex items-center gap-2"  >
                     <Checkbox id="terms" value="hourly" onClick={onChoseTime} />
