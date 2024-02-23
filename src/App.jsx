@@ -4,6 +4,7 @@ import { Timecard } from './components/card/Timecard'
 import { ComboboxDemo } from './components/combobox/selectDate'
 import { Context } from './context/useContext'
 import { MainContent } from './components/maindata/main'
+import ClipLoader from "react-spinners/ClipLoader";
 
 let  now = new Date(); 
 now = now.setDate(now.getDate() - 8);
@@ -11,6 +12,7 @@ const prefixDate = new Date (now);
 
 function App() {
  const [selectedCity,setSelectedCity] = useState({startDate:prefixDate,endDate:new Date()})
+ const[loader,setLoader]=useState(false)
  const [handleError,setError]=useState(null)
  const [responseData,setResponseData]=useState([])
  const [isGotData,setIsgotData] = useState (false)
@@ -18,7 +20,7 @@ function App() {
 // useEffect(()=>{},[responseData])
 
  const handlePostData= async ()=>{
-  console.log(selectedCity.latitude!==undefined )
+  setLoader(true)
   setError(null)
   if(selectedCity.latitude!==undefined && selectedCity.time!==undefined && selectedCity.day!==undefined){
   let url ='';
@@ -36,6 +38,7 @@ function App() {
       const data = await response.json();
       setResponseData(data);
       setIsgotData(true)
+      setLoader(false)
     }
    
   }
@@ -57,7 +60,7 @@ setError("Please Choose Latitude and Longitude Image and Hourly")
     <ComboboxDemo />
     <button type="button" className="border bg-[#000000] mt-4 mb-1 px-3 text-[#ffffff] rounded" onClick={handlePostData}>Submit</button>
     {handleError!==null?<p className='text-red-700 text-center'>{handleError}</p>:null}
-    {isGotData ?<MainContent response={responseData.hourly} /> :'' }
+    {loader?<ClipLoader />:isGotData ?<MainContent response={responseData.hourly} /> :'' }
     
     </div>
     
