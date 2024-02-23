@@ -61,8 +61,6 @@ setError("Please Choose Latitude and Longitude Image and Hourly")
     {handleError!==null?<p className='text-red-700 text-center'>{handleError}</p>:null}
     {loader?<ClipLoader />:isGotData ?<MainContent />:'' }
     </div>
-  
-   
     </Context.Provider>
     </>
   )
