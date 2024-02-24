@@ -44,9 +44,11 @@ function App() {
   catch (err){
   setError(err);
   setIsgotData(false)
+   setLoader(false)
   }
 }else{
 setError("Please Choose Latitude and Longitude Image and Hourly")
+   setLoader(false)
 }
  }
 
