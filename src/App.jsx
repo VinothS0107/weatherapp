@@ -47,7 +47,7 @@ function App() {
    setLoader(false)
   }
 }else{
-setError("Please Choose Latitude Image and Hourly")
+setError("Please Choose Image and Hourly")
    setLoader(false)
 }
  }
