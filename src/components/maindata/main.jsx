@@ -80,14 +80,14 @@ export function MainContent(){
                         )})}
                     </ul> 
                 <div className="flex justify-center w-[60%] m-[20px] gap-2" >
-                    <button type="button" className="text-[20px] border-2 w-[40px] " name="decrement" onClick={getInput}>-</button>
+                    <button type="button" className={start===1?"!text-gray-400 text-[20px]  w-[40px]":"text-[20px] border-2 w-[40px] hover:bg-[#d9f99d]"} disabled={start===1} name="decrement" onClick={getInput}>-</button>
                     <ul className="flex justify-center gap-4" onClick={onPageClick}> 
                         {pageNumber.map((eachPage,index)=>(
                          <li key={index}>
                          <button type="button" value={eachPage} className={`${parseInt(chosenPage)===eachPage?"bg-black border text-[#ffffff]":"bg-transparent"} w-[30px]`}>{eachPage}</button></li>
                              ))}
                     </ul>
-                    <button type="button" className="text-[20px] border-2 w-[40px]" name="increment" onClick={getInput}>+</button>
+                    <button type="button" className={end===totalPageNumber?"!text-gray-400 text-[20px]  w-[40px]":"text-[20px] border-2 w-[40px] hover:bg-[#d9f99d]"} disabled={end===totalPageNumber}  name="increment" onClick={getInput}>+</button>
                 </div>
         </>
     )
